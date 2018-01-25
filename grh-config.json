@@ -1,0 +1,91 @@
+{
+  "branchToRevise": "solution",
+  "incrementCommits": [
+    {
+      "message": "Add Steeltoe Management endpoints",
+      "tags": [
+        "health-monitoring-solution"
+      ]
+    },
+    {
+      "message": "Add tests for health monitoring lab",
+      "tags": [
+        "health-monitoring-start"
+      ]
+    },
+    {
+      "message": "Persist time entries in database",
+      "tags": [
+        "database-solution"
+      ]
+    },
+    {
+      "message": "Add tests for Database lab",
+      "tags": [
+        "database-start"
+      ]
+    },
+    {
+      "message": "Add migrations and migrate environments",
+      "tags": [
+        "migration-solution"
+      ]
+    },
+    {
+      "message": "Add in build script to migrate databases",
+      "tags": [
+        "migration-start"
+      ]
+    },
+    {
+      "message": "Add TimeEntry MVC in memory",
+      "tags": [
+        "mvc-solution"
+      ]
+    },
+    {
+      "message": "Add tests for MVC lab",
+      "tags": [
+        "mvc-start"
+      ]
+    },
+    {
+      "message": "Deploy to multiple environments",
+      "tags": [
+        "pipeline-solution"
+      ]
+    },
+    {
+      "message": "Add deployment pipeline",
+      "tags": [
+        "pipeline-start"
+      ]
+    },
+    {
+      "message": "Add manifest file for deployment to PCF",
+      "tags": [
+        "externalized-config-solution"
+      ]
+    },
+    {
+      "message": "Add tests for externalized configuration lab",
+      "tags": [
+        "externalized-config-start"
+      ]
+    },
+    {
+      "message": "Simple .NET Core Web API app",
+      "tags": [
+        "dotnet-core-app-solution"
+      ]
+    },
+    {
+      "message": "Initial commit",
+      "tags": [
+        "dotnet-core-app-start"
+      ]
+    }
+  ]
+}
+
+  
