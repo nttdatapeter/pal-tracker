@@ -1,0 +1,105 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: 'microsoft/dotnet:2.1-sdk'
+        environment:
+          DEBIAN_FRONTEND: "noninteractive"
+    steps:
+      - checkout
+      - run:
+          name: Test and build
+          command: |
+            ./scripts/build.sh $CIRCLE_SHA1
+
+      - store_artifacts:
+          path: artifacts
+
+      - persist_to_workspace:
+          root: artifacts
+          paths:
+            - pal-tracker-*.tgz
+
+  deployToReview:
+    docker:
+      - image: 'microsoft/dotnet:2.1-sdk'
+        environment:
+          DEBIAN_FRONTEND: "noninteractive"
+          EXTRACT_DEST: /tmp/extracted-archive
+          ENVIRONMENT: review
+    steps:
+      - attach_workspace:
+          at: artifacts
+      - run:
+          name: Install CF CLI
+          command: |
+            apt-get update
+            apt-get -y install apt-transport-https ca-certificates
+            wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | apt-key add -
+            echo "deb https://packages.cloudfoundry.org/debian stable main" | tee /etc/apt/sources.list.d/cloudfoundry-cli.list
+            apt-get update
+            apt-get install cf-cli
+
+      - run:
+          name: Unzip artifacts
+          command: |
+            mkdir -p $EXTRACT_DEST
+            tar -xvzf artifacts/pal-tracker-$CIRCLE_SHA1.tgz -C $EXTRACT_DEST
+
+      - run:
+          name: Deploy
+          command: |
+            cd $EXTRACT_DEST
+
+            cf login -a $CF_API -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s $ENVIRONMENT
+            cf push -f manifest-$ENVIRONMENT.yml
+
+  deployToProd:
+    docker:
+      - image: 'microsoft/dotnet:2.1-sdk'
+        environment:
+          DEBIAN_FRONTEND: "noninteractive"
+          EXTRACT_DEST: /tmp/extracted-archive
+          ENVIRONMENT: production
+    steps:
+      - attach_workspace:
+          at: artifacts
+      - run:
+          name: Install CF CLI
+          command: |
+            apt-get update
+            apt-get -y install apt-transport-https ca-certificates
+            wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | apt-key add -
+            echo "deb https://packages.cloudfoundry.org/debian stable main" | tee /etc/apt/sources.list.d/cloudfoundry-cli.list
+            apt-get update
+            apt-get install cf-cli
+
+      - run:
+          name: Unzip artifacts
+          command: |
+            mkdir -p $EXTRACT_DEST
+            tar -xvzf artifacts/pal-tracker-$CIRCLE_SHA1.tgz -C $EXTRACT_DEST
+
+      - run:
+          name: Deploy
+          command: |
+            cd $EXTRACT_DEST
+
+            cf login -a $CF_API -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s $ENVIRONMENT
+            cf push -f manifest-$ENVIRONMENT.yml
+
+workflows:
+  version: 2
+  deployment-pipeline:
+    jobs:
+      - build
+      - deployToReview:
+          requires:
+          - build
+      - canDeployToProduction:
+          type: approval
+          requires:
+           - deployToReview
+      - deployToProd:
+          requires:
+            - canDeployToProduction
