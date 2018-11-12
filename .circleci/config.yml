@@ -64,6 +64,7 @@ jobs:
 
             cf login -a $CF_API -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s $ENVIRONMENT
             cf push -f manifest-$ENVIRONMENT.yml
+            chmod u+x ./migrate-databases.sh
             ./migrate-databases.sh pal-tracker . /root/project
 
   deployToProd:
@@ -109,6 +110,7 @@ jobs:
 
             cf login -a $CF_API -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s $ENVIRONMENT
             cf push -f manifest-$ENVIRONMENT.yml
+            chmod u+x ./migrate-databases.sh
             ./migrate-databases.sh pal-tracker . /root/project
 
 workflows:
