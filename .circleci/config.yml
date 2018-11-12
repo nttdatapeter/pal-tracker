@@ -9,8 +9,9 @@ jobs:
       - checkout
       - run:
           name: Test and build
-          command: |
-            ./scripts/build.sh $CIRCLE_SHA1
+          command: | 
+            chmod u+x ./scripts/build.sh
+            ./scripts/build.sh $CIRCLE_SHA1 
 
       - store_artifacts:
           path: artifacts
