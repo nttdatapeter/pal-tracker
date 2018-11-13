@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "ab5bb2d62cc6284e394f68db8d2e18419e37250f"
+    "signature": "c571c176f927208e473e3fe5866a3460ebb3d491"
   },
   "compilationOptions": {},
   "targets": {
@@ -47,6 +47,42 @@
           "lib/netcoreapp1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {
             "assemblyVersion": "15.0.0.0",
             "fileVersion": "15.0.27718.3008"
+          }
+        }
+      },
+      "Microsoft.EntityFrameworkCore/2.1.4": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Abstractions": "2.1.4",
+          "Microsoft.EntityFrameworkCore.Analyzers": "2.1.4",
+          "Remotion.Linq": "2.2.0",
+          "System.Collections.Immutable": "1.5.0",
+          "System.Diagnostics.DiagnosticSource": "4.5.1",
+          "System.Interactive.Async": "3.1.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.dll": {
+            "assemblyVersion": "2.1.4.0",
+            "fileVersion": "2.1.4.18263"
+          }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Abstractions/2.1.4": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
+            "assemblyVersion": "2.1.4.0",
+            "fileVersion": "2.1.4.18263"
+          }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Analyzers/2.1.4": {},
+      "Microsoft.EntityFrameworkCore.Relational/2.1.2": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "2.1.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.dll": {
+            "assemblyVersion": "2.1.2.0",
+            "fileVersion": "2.1.2.18207"
           }
         }
       },
@@ -346,11 +382,109 @@
           }
         }
       },
+      "MySqlConnector/0.44.1": {
+        "runtime": {
+          "lib/netcoreapp2.1/MySqlConnector.dll": {
+            "assemblyVersion": "0.44.1.0",
+            "fileVersion": "0.44.1.0"
+          }
+        }
+      },
       "NETStandard.Library/2.0.3": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.1.0"
         }
       },
+      "Pomelo.EntityFrameworkCore.MySql/2.1.2": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "2.1.2",
+          "MySqlConnector": "0.44.1",
+          "Pomelo.JsonObject": "2.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Pomelo.EntityFrameworkCore.MySql.dll": {
+            "assemblyVersion": "2.1.2.0",
+            "fileVersion": "2.1.2.0"
+          }
+        }
+      },
+      "Pomelo.JsonObject/2.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/Pomelo.JsonObject.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "Remotion.Linq/2.2.0": {
+        "dependencies": {
+          "System.Linq.Queryable": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.0/Remotion.Linq.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.30000"
+          }
+        }
+      },
+      "Steeltoe.CloudFoundry.Connector.EFCore/2.1.1": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "2.1.4",
+          "Steeltoe.CloudFoundry.ConnectorBase": "2.1.1",
+          "Steeltoe.Extensions.Configuration.CloudFoundryCore": "2.1.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Steeltoe.CloudFoundry.Connector.EFCore.dll": {
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.0"
+          }
+        }
+      },
+      "Steeltoe.CloudFoundry.ConnectorBase/2.1.1": {
+        "dependencies": {
+          "Steeltoe.Extensions.Configuration.CloudFoundryBase": "2.1.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Steeltoe.CloudFoundry.ConnectorBase.dll": {
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.0"
+          }
+        }
+      },
+      "Steeltoe.Common/2.1.1": {
+        "dependencies": {
+          "System.Diagnostics.DiagnosticSource": "4.5.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Steeltoe.Common.dll": {
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.0"
+          }
+        }
+      },
+      "Steeltoe.Extensions.Configuration.CloudFoundryBase/2.1.1": {
+        "dependencies": {
+          "Steeltoe.Common": "2.1.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Steeltoe.Extensions.Configuration.CloudFoundryBase.dll": {
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.0"
+          }
+        }
+      },
+      "Steeltoe.Extensions.Configuration.CloudFoundryCore/2.1.1": {
+        "dependencies": {
+          "Steeltoe.Extensions.Configuration.CloudFoundryBase": "2.1.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Steeltoe.Extensions.Configuration.CloudFoundryCore.dll": {
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.0"
+          }
+        }
+      },
+      "System.Collections.Immutable/1.5.0": {},
       "System.ComponentModel/4.3.0": {},
       "System.ComponentModel.EventBasedAsync/4.0.11": {},
       "System.ComponentModel.Primitives/4.3.0": {
@@ -362,6 +496,14 @@
         "dependencies": {
           "System.ComponentModel": "4.3.0",
           "System.ComponentModel.Primitives": "4.3.0"
+        }
+      },
+      "System.Diagnostics.DiagnosticSource/4.5.1": {
+        "runtime": {
+          "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {
+            "assemblyVersion": "4.0.3.1",
+            "fileVersion": "4.6.26919.2"
+          }
         }
       },
       "System.Diagnostics.Process/4.1.0": {
@@ -402,6 +544,17 @@
           "runtime/win/lib/_._": {
             "rid": "win",
             "assetType": "runtime"
+          }
+        }
+      },
+      "System.Interactive.Async/3.1.1": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Interactive.Async.dll": {
+            "assemblyVersion": "3.0.3000.0",
+            "fileVersion": "3.1.1.0"
           }
         }
       },
@@ -485,7 +638,10 @@
       },
       "PalTracker/1.0.0": {
         "dependencies": {
-          "Microsoft.NETCore.App": "2.1.0"
+          "Microsoft.EntityFrameworkCore": "2.1.4",
+          "Microsoft.NETCore.App": "2.1.0",
+          "Pomelo.EntityFrameworkCore.MySql": "2.1.2",
+          "Steeltoe.CloudFoundry.Connector.EFCore": "2.1.1"
         },
         "runtime": {
           "PalTracker.dll": {}
@@ -519,6 +675,34 @@
       "sha512": "sha512-cgcX2c/K35GrIjXkUwWop2GyG/YsLVo2wnL/2ESzOqr4V21FrrCVYuhpClv/bD80+rwXyIpyulqSX1NBNeAtMA==",
       "path": "microsoft.codecoverage/15.8.0",
       "hashPath": "microsoft.codecoverage.15.8.0.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore/2.1.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-72l8hbaJ5cXxZLCFeo46MDnvU8XJiDRNh1YQPzAlqVAlQrUwSVojYbJyOE7vbWqsb8rRqQYJ6NsmgPdUv/NKzw==",
+      "path": "microsoft.entityframeworkcore/2.1.4",
+      "hashPath": "microsoft.entityframeworkcore.2.1.4.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Abstractions/2.1.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5Vc1zdCq7p+E/8ndJnTKHebJeqSC/1gb4hXDPi7UHdqURAxWl3lZV5+79x/dSfO/P6n/sEz5fURYGOMDoreXUA==",
+      "path": "microsoft.entityframeworkcore.abstractions/2.1.4",
+      "hashPath": "microsoft.entityframeworkcore.abstractions.2.1.4.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Analyzers/2.1.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cYjXickepORM4UmNdqdZ3l74xhG5OHWMDxsFlqHJGm0qxLAHv5GAI2dKkkGslrjyaPYnfRW3JhAWubBWBt0XUg==",
+      "path": "microsoft.entityframeworkcore.analyzers/2.1.4",
+      "hashPath": "microsoft.entityframeworkcore.analyzers.2.1.4.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Relational/2.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7g0gmst6wNin6+ykkrLvx6pn1yRah+6wfts+sFPv9IG/ex1Q5o1jsjIeXte/5fjo9ufpmx9+4fKMO+YC74ssEA==",
+      "path": "microsoft.entityframeworkcore.relational/2.1.2",
+      "hashPath": "microsoft.entityframeworkcore.relational.2.1.2.nupkg.sha512"
     },
     "Microsoft.NET.Test.Sdk/15.8.0": {
       "type": "package",
@@ -597,12 +781,82 @@
       "path": "moq/4.10.0",
       "hashPath": "moq.4.10.0.nupkg.sha512"
     },
+    "MySqlConnector/0.44.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AdVMqv8KVA878+AF8EkXqjac3ih1tsOzBchYHasoW69vn2Ldez0ucbzB43dmLVkmTa1sQtLtoDbk3n9S34tZyg==",
+      "path": "mysqlconnector/0.44.1",
+      "hashPath": "mysqlconnector.0.44.1.nupkg.sha512"
+    },
     "NETStandard.Library/2.0.3": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    },
+    "Pomelo.EntityFrameworkCore.MySql/2.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LyM3NFH3Tj1ppHZ9QdGoMxA8Ga+kouC7r7QwgPFxWwzsMOsns8Y935u6YQjDBNaPlClTDJSm1V7aOnidxtAMPw==",
+      "path": "pomelo.entityframeworkcore.mysql/2.1.2",
+      "hashPath": "pomelo.entityframeworkcore.mysql.2.1.2.nupkg.sha512"
+    },
+    "Pomelo.JsonObject/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sMN9ETMoYfqCegOCVkOkOkfXK3ceH8nWkSeZPgLwfnx6UnqVXTl/ScIZs+x5Q8qgiPmYYCPmtolxNQ0QrcU97g==",
+      "path": "pomelo.jsonobject/2.0.0",
+      "hashPath": "pomelo.jsonobject.2.0.0.nupkg.sha512"
+    },
+    "Remotion.Linq/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fK/76UmpC0FXBlGDFVPLJHQlDLYnGC+XY3eoDgCgbtrhi0vzbXDQ3n/IYHhqSKqXQfGw/u04A1drWs7rFVkRjw==",
+      "path": "remotion.linq/2.2.0",
+      "hashPath": "remotion.linq.2.2.0.nupkg.sha512"
+    },
+    "Steeltoe.CloudFoundry.Connector.EFCore/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EPbcbER8Hd5HiU0RDPayrAmXlhqujp8v2kkp9JGcYhAEAJ0oCpUfW3YZYCdeb+ian7QdDXmoVCBYydX0n4G0ww==",
+      "path": "steeltoe.cloudfoundry.connector.efcore/2.1.1",
+      "hashPath": "steeltoe.cloudfoundry.connector.efcore.2.1.1.nupkg.sha512"
+    },
+    "Steeltoe.CloudFoundry.ConnectorBase/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RRAwPI2RaUvY5/Z7sWyDes0EFzT8tQawhkbtxUQyNj0UFollPiGxmX16hnT9J56O9nVHMbQoXsoDLvbwEzcpAw==",
+      "path": "steeltoe.cloudfoundry.connectorbase/2.1.1",
+      "hashPath": "steeltoe.cloudfoundry.connectorbase.2.1.1.nupkg.sha512"
+    },
+    "Steeltoe.Common/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XW8ipk5UktpKm0eVzfpz0oXVIbDzlN3cq4uFMsC86PlxWvlmT5FITyzWCiDOjpnh3sQWRxb1fSXNHkEMEhmcEg==",
+      "path": "steeltoe.common/2.1.1",
+      "hashPath": "steeltoe.common.2.1.1.nupkg.sha512"
+    },
+    "Steeltoe.Extensions.Configuration.CloudFoundryBase/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-V8TUa3N5ffZTTfEc2ABz35xc+xncSTq4hy/KAbDqRO+XTKvxhMnRqrYTSOK7JTaoLYyxahvUbTuW/e4TEorFDw==",
+      "path": "steeltoe.extensions.configuration.cloudfoundrybase/2.1.1",
+      "hashPath": "steeltoe.extensions.configuration.cloudfoundrybase.2.1.1.nupkg.sha512"
+    },
+    "Steeltoe.Extensions.Configuration.CloudFoundryCore/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6aJ1hnT2DUZKXT6JQzi6TmQBHNxkyUBz9VrWmU7I4S5Lvp75nr20smmgVZ83wVfEaZBUYpBbo4qA+RXeXWw42w==",
+      "path": "steeltoe.extensions.configuration.cloudfoundrycore/2.1.1",
+      "hashPath": "steeltoe.extensions.configuration.cloudfoundrycore.2.1.1.nupkg.sha512"
+    },
+    "System.Collections.Immutable/1.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RGxi2aQoXgZ5ge0zxrKqI4PU9LrYYoLC+cnEnWXKsSduCOUhE1GEAAoTexUVT8RZOILQyy1B27HC8Xw/XLGzdQ==",
+      "path": "system.collections.immutable/1.5.0",
+      "hashPath": "system.collections.immutable.1.5.0.nupkg.sha512"
     },
     "System.ComponentModel/4.3.0": {
       "type": "package",
@@ -632,6 +886,13 @@
       "path": "system.componentmodel.typeconverter/4.3.0",
       "hashPath": "system.componentmodel.typeconverter.4.3.0.nupkg.sha512"
     },
+    "System.Diagnostics.DiagnosticSource/4.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-m86SgxAIi5j0iGzx2y1LrcMcopIYfinfcojyQ9CcNRy3MZvi0dVuDlMj2M7kV6MMGSunqZ+OnQ+rQbxWafFBaw==",
+      "path": "system.diagnostics.diagnosticsource/4.5.1",
+      "hashPath": "system.diagnostics.diagnosticsource.4.5.1.nupkg.sha512"
+    },
     "System.Diagnostics.Process/4.1.0": {
       "type": "package",
       "serviceable": true,
@@ -652,6 +913,13 @@
       "sha512": "sha512-VnYp1NxGx8Ww731y2LJ1vpfb/DKVNKEZ8Jsh5SgQTZREL/YpWRArgh9pI8CDLmgHspZmLL697CaLvH85qQpRiw==",
       "path": "system.diagnostics.tracesource/4.3.0",
       "hashPath": "system.diagnostics.tracesource.4.3.0.nupkg.sha512"
+    },
+    "System.Interactive.Async/3.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hZccYiIE5RS1/J9Tb/BNtosAGVggdlsJm4Ojdu+gDV0p4AIi+LUfUogMKkRacljQEJd2AG6vYzvcjhQFkqoZmw==",
+      "path": "system.interactive.async/3.1.1",
+      "hashPath": "system.interactive.async.3.1.1.nupkg.sha512"
     },
     "System.Linq.Queryable/4.3.0": {
       "type": "package",
