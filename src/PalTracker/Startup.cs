@@ -11,6 +11,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Steeltoe.CloudFoundry.Connector.MySql.EFCore;
+using Steeltoe.Management.CloudFoundry;
+using Steeltoe.Management.Endpoint.CloudFoundry;
+using Steeltoe.Management.Endpoint.Info;
+using Steeltoe.Extensions.Logging;
+using Steeltoe.Common.HealthChecks;
 
 namespace PalTracker
 {
@@ -27,6 +32,7 @@ namespace PalTracker
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddCloudFoundryActuators(Configuration);
             services.AddSingleton(sp => new WelcomeMessage(Configuration.GetValue<string>("WELCOME_MESSAGE","WELCOME_MESSAGE not configured.")));
             services.AddSingleton(sp => new CloudFoundryInfo(Configuration.GetValue<string>("PORT","Port Not Found"), 
             Configuration.GetValue<string>("MEMORY_LIMIT","Memory problem"),
@@ -37,7 +43,9 @@ namespace PalTracker
             services.AddSingleton<ITimeEntryRepository, InMemoryTimeEntryRepository>();
             services.AddDbContext<TimeEntryContext>(options => options.UseMySql(Configuration));
             services.AddScoped<ITimeEntryRepository, MySqlTimeEntryRepository>();
-
+            services.AddSingleton<IHealthContributor, TimeEntryHealthContributor>();
+            services.AddSingleton<IOperationCounter<TimeEntry>, OperationCounter<TimeEntry>>();
+            services.AddSingleton<IInfoContributor, TimeEntryInfoContributor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +62,7 @@ namespace PalTracker
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            app.UseCloudFoundryActuators();
         }
     }
 }
